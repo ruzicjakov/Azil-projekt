@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Dostupni psi{% endblock %}
+{% block content%}
+<h1>Dostupni psi</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Pasmina</th>
+            <th>Dob</th>
+            <th>Spol</th>
+            <th>Ime</th>
+            <th>Boja</th>
+            <th>Datum dolaska</th>
+            <th>Zdravstveno stanje</th>
+            <th>Težina</th>
+            <th>Akcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pas in psi %}
+        <tr>
+            <td>{{ pas.id_pas }}</td>
+            <td>{{ pas.pasmina }}</td>
+            <td>{{ pas.dob }}</td>
+            <td>{{ pas.spol }}</td>
+            <td>{{ pas.ime }}</td>
+            <td>{{ pas.boja }}</td>
+            <td>{{ pas.datum_dolaska }}</td>
+            <td>{{ pas.zdravstveno_stanje }}</td>
+            <td>{{ pas.tezina }}</td>
+            <td>
+                <a href="/izmjena/{{ pas.id_pas }}" class="btn btn-outline-secondary btn-sm">Izmjeni</a>
+                <form action="/brisanje/{{ pas.id_pas }}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-danger btn-sm">Izbriši</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock%}

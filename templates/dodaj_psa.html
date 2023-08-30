@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %} Dodavanje {% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Dodavanje Psa</h1>
+    <form action="/dodavanje" method="post">
+        <div class="form-group">
+            <label for="pasmina">Pasmina:</label>
+            <input type="text" id="pasmina" name="pasmina" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Dob:</label>
+            <input type="text" id="dob" name="dob" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="spol">Spol:</label>
+            <input type="text" id="spol" name="spol" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="boja">Boja:</label>
+            <input type="text" id="boja" name="boja" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="datum_dolaska">Datum dolaska:</label>
+            <input type="date" id="datum_dolaska" name="datum_dolaska" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="zdravstveno_stanje">Zdravstveno stanje:</label>
+            <input type="text" id="zdravstveno_stanje" name="zdravstveno_stanje" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="tezina">Težina:</label>
+            <input type="number" id="tezina" name="tezina" class="form-control" step="0.01" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+</div>
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Izmjena{% endblock %}
+{% block content%}
+<form action="{{ url_for('izmjena', id_pas=pas_update.id_pas) }}" method="post" class="my-3">
+    <input type="hidden" name="id_pas" value="{{ pas_update.id_pas }}">
+    <div class="form-group">
+        <label for="pasmina">Pasmina:</label>
+        <input type="text" id="pasmina" name="pasmina" value="{{ pas_update.pasmina }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="dob">Dob:</label>
+        <input type="text" id="dob" name="dob" value="{{ pas_update.dob }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="spol">Spol:</label>
+        <input type="text" id="spol" name="spol" value="{{ pas_update.spol }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="ime">Ime:</label>
+        <input type="text" id="ime" name="ime" value="{{ pas_update.ime }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="boja">Boja:</label>
+        <input type="text" id="boja" name="boja" value="{{ pas_update.boja }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="datum_dolaska">Datum dolaska:</label>
+        <input type="date" id="datum_dolaska" name="datum_dolaska" value="{{ pas_update.datum_dolaska }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="zdravstveno_stanje">Zdravstveno stanje:</label>
+        <input type="text" id="zdravstveno_stanje" name="zdravstveno_stanje" value="{{ pas_update.zdravstveno_stanje }}" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="tezina">Težina:</label>
+        <input type="number" id="tezina" name="tezina" value="{{ pas_update.tezina }}" step="0.01" class="form-control" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Izmjeni</button>
+</form>
+{% endblock%}
